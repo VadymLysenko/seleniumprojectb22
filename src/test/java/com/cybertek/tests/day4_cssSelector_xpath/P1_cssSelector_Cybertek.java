@@ -26,5 +26,11 @@ public class P1_cssSelector_Cybertek {
         WebElement retrievePasswordButton = driver.findElement(By.cssSelector("button[id='form_submit']"));
 
         WebElement poweredByText = driver.findElement(By.cssSelector("div[style='text-align: center;']"));
+
+        System.out.println("homeLink.isDisplayed() = " + homeLink.isDisplayed());
+
+        System.out.println("forgotPasswordHeader.isDisplayed() = " + forgotPasswordHeader.isDisplayed());
+
+        System.out.println("emailLabelisDisplayed() = " + emailLabel.isDisplayed());
     }
 }
