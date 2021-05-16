@@ -22,10 +22,11 @@ public class WebDriverFactory {
 
     public static WebDriver getDriver(String browserType) {
         if (browserType.equalsIgnoreCase("chrome")) {
-            //WebDriverManager.chromedriver().setup();
-            //WebDriver driver = new ChromeDriver();
-            WebDriver driver = WebDriverFactory.getDriver("chrome");
+            WebDriverManager.chromedriver().setup();
+            WebDriver driver = new ChromeDriver();
+            //WebDriver driver = WebDriverFactory.getDriver("chrome");
             driver.manage().window().maximize();
+            driver.get("https://google.com");
             return new ChromeDriver();
 
         } else if (browserType.equalsIgnoreCase("firefox")) {
