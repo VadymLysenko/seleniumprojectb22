@@ -23,6 +23,9 @@ public class P3_cssSelector_AmazonTask {
 
         amazonSearchBar.sendKeys("wooden plate"+ Keys.ENTER);
 
+        String expectedTitle = "Amazon.com : wooden plate";
+        String actualTitle = driver.getTitle();
+
         if(driver.getTitle().contains("wooden plate")){
             System.out.println("Test passing wooden plate found and YAY");
         }else{
