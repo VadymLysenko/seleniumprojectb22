@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class PO_Checkbox_Practice {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
@@ -30,6 +30,24 @@ public class PO_Checkbox_Practice {
             System.out.println("Checkbox 2 is selected. Verification PASSED!");
         }else{
             System.out.println("Checkbox 2 is  not selected. Verification FAILED!!!");
+
         }
+        Thread.sleep(2000);
+        checkbox1.click();
+
+        Thread.sleep(2000);
+        checkbox2.click();
+
+        if(checkbox1.isSelected()) {
+            System.out.println("Checkbox 1 is selected. Verification PASSED!");
+        }else{
+            System.out.println("Checkbox 1 is not selected. Verification FAILED!!!");
+        }
+        if(!checkbox2.isSelected()) {
+            System.out.println("Checkbox 2 is not selected. Verification PASSED!");
+        }else {
+            System.out.println("Checkbox 2 is selected. Verification FAILED!!!");
+        }
+
     }
 }
