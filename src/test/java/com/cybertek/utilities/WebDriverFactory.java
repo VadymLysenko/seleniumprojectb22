@@ -15,30 +15,30 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
-    public static void main(String[] args) {
-        getDriver("chrome");
 
-    }
+    public static WebDriver getDriver(String browserType){
 
-    public static WebDriver getDriver(String browserType) {
-        if (browserType.equalsIgnoreCase("chrome")) {
+        if (browserType.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
-            WebDriver driver = new ChromeDriver();
-            //WebDriver driver = WebDriverFactory.getDriver("chrome");
-            driver.manage().window().maximize();
-            driver.get("https://google.com");
+
             return new ChromeDriver();
 
-        } else if (browserType.equalsIgnoreCase("firefox")) {
+        }else if (browserType.equalsIgnoreCase("firefox")){
             WebDriverManager.firefoxdriver().setup();
-            WebDriver driver = new FirefoxDriver();
-            driver.manage().window().maximize();
+
             return new FirefoxDriver();
-        } else {
-            System.out.println("browser type not exist");
+
+        }else{
+            System.out.println("Given browser type does not exist.  Driver = null");
             return null;
         }
+
     }
+
+
+
+
+
 
 
 }
