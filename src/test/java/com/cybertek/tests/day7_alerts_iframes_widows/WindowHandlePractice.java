@@ -21,6 +21,11 @@ public class WindowHandlePractice {
     }
     @Test
     public void window_test () {
+        //printing out the window handle of the first page opened
+        //storing the first windowHandle into a string in a result practice for future needs when we need
+        //to switch back to it
+        String mainHandle = driver.getWindowHandle();
+        System.out.println("mainHandle = " + mainHandle);
 
         //4. Assert: Title is “Practice”
 
@@ -34,9 +39,10 @@ public class WindowHandlePractice {
         WebElement clickHereLink = driver.findElement(By.linkText("Click Here"));
         clickHereLink.click();
 
-        String mainHandle = driver.getWindowHandle();
-
-        System.out.println("mainHandle = " + mainHandle);
+        for (String each : driver.getWindowHandles()) {
+            driver.switchTo().window(each);
+            System.out.println("Current Title While Switching: " + driver.getTitle());
+        }
 
         String actualTitleAfterClick = driver.getTitle();
 
