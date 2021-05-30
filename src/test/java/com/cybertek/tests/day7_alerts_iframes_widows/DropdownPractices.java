@@ -68,14 +68,17 @@ public class DropdownPractices {
         stateDropdown.selectByVisibleText("Illinois");
 
         //4.Select Virginia
+
+        stateDropdown.selectByValue("VA");
+
         //5.Select California
         //6. Verify final selected option is California.Use all Select options.(visible text, value, index)
 
 
     }
     @AfterClass
-    public void teardownClass() {
-
+    public void teardownClass() throws InterruptedException {
+        Thread.sleep(5000);
         driver.close();
 
     }
