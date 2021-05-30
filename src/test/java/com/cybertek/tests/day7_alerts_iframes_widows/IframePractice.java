@@ -35,8 +35,8 @@ public class IframePractice {
         //#3 - if <iframe> tag has id or name attribute, we can pass its attribute value as a string into
         //.switch().frame() method directly
 
-        //WebElement iframe = driver.findElement(By.xpath("//iframe[@class='tox-edit-area__iframe']"));
-        driver.switchTo().frame("mce_0_ifr");
+        WebElement iframe = driver.findElement(By.xpath("//iframe[@class='tox-edit-area__iframe']"));
+        driver.switchTo().frame(iframe);
 
         //locating web element text
         WebElement yourContentGoesHereText = driver.findElement(By.xpath("//p"));
@@ -44,6 +44,12 @@ public class IframePractice {
         //4. Assert: “Your content goes here.” Text is displayed.
 
         Assert.assertTrue(yourContentGoesHereText.isDisplayed());
+
+        driver.switchTo().defaultContent();
+
+        WebElement headerText = driver.findElement(By.xpath("//h3"));
         //5. Assert: “An iFrame containing the TinyMCE WYSIWYG Editor
+
+        Assert.assertTrue(headerText.isDisplayed());
     }
 }
