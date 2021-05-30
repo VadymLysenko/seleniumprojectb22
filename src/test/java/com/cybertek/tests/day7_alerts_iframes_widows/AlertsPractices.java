@@ -24,16 +24,20 @@ public class AlertsPractices {
     }
 
     @Test
-    public void information_alert_test() {
+    public void information_alert_test() throws InterruptedException {
 
         //locating button to alert to click
         WebElement informationAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
 
         informationAlertButton.click();
+
+        Thread.sleep(2000);
         //switching drivers to alert so we can handle it
         Alert alert = driver.switchTo().alert();
         alert.accept();
 
+
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
 
     }
 
