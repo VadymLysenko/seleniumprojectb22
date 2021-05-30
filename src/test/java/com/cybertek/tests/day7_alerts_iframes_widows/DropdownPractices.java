@@ -81,7 +81,7 @@ public class DropdownPractices {
         String expectedOptionText = "California";
         String actualOptionText = stateDropdown.getFirstSelectedOption().getText();
 
-        Assert.assertEquals(actualOptionText,expectedOptionText);
+        Assert.assertEquals(actualOptionText,expectedOptionText,"This message will be printout if assertions failed");
 
 
     }
