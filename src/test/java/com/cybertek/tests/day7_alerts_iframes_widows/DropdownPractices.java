@@ -72,6 +72,9 @@ public class DropdownPractices {
         stateDropdown.selectByValue("VA");
 
         //5.Select California
+
+        stateDropdown.selectByIndex(5);
+
         //6. Verify final selected option is California.Use all Select options.(visible text, value, index)
 
 
