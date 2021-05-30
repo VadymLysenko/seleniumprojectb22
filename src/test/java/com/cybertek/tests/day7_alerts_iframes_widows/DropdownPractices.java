@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -51,10 +52,33 @@ public class DropdownPractices {
         String actualStateDropdownText = stateDropdown.getFirstSelectedOption().getText();
         String expectedStateDropdownText = "Select a State";
 
-        Assert.assertTrue(actualStateDropdownText.equals(expectedStateDropdownText));
+        Assert.assertEquals(actualStateDropdownText,expectedStateDropdownText);
+
+    }
+
+    @Test
+    public void tc2_state_dropdown_test() {
+
+        //locating state dropdown
+        Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
 
 
+        //3.Select Illinois
+
+        stateDropdown.selectByVisibleText("Illinois");
+
+        //4.Select Virginia
+        //5.Select California
+        //6. Verify final selected option is California.Use all Select options.(visible text, value, index)
 
 
     }
+    @AfterClass
+    public void teardownClass() {
+
+        driver.close();
+
+    }
+
+
 }
