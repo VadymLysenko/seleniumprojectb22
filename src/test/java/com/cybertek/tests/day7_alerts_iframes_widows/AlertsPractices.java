@@ -32,6 +32,7 @@ public class AlertsPractices {
         informationAlertButton.click();
         //switching drivers to alert so we can handle it
         Alert alert = driver.switchTo().alert();
+        alert.accept();
 
 
     }
