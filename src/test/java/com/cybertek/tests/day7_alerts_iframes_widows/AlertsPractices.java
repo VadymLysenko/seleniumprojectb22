@@ -1,6 +1,7 @@
 package com.cybertek.tests.day7_alerts_iframes_widows;
 
 import com.cybertek.utilities.WebDriverFactory;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,6 +29,9 @@ public class AlertsPractices {
         //locating button to alert to click
         WebElement informationAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
 
+        informationAlertButton.click();
+        //switching drivers to alert so we can handle it
+        Alert alert = driver.switchTo().alert();
 
 
     }
