@@ -3,19 +3,30 @@ package com.cybertek.tests.day9_properties_browser_utils;
 import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 public class ReadingProperties {
 
     @Test
-    public void reading_from_properties_file() {
+    public void reading_from_properties_file() throws IOException {
 
         //#1 - Create object of properties class (coming from java lib)
 
         Properties properties = new Properties();
 
         //#2 - Open the file using FileInputStream
-        FileInputStream file = new FileInputStream();
+        // We are trying to open a file, we need to pass the path
+
+        FileInputStream file = new FileInputStream("configuration.properties");
+
+        //#3 - load the properties
+        properties.load(file);
+
+        //reading from configuration.properties
+        System.out.println("properties.getProperty(\"browser\") = " + properties.getProperty("browser"));
+        System.out.println("properties.getProperty(\"env\") = " + properties.getProperty("env"));
+
     }
 
 }
