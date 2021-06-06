@@ -46,7 +46,7 @@ public class project_test {
         vehicle.click();
 
 
-        WebElement generalInfo = driver.findElement(By.xpath("//td[.='Cyberte']"));
+        WebElement generalInfo = driver.findElement(By.xpath("//td[.='Cybertek']"));
         generalInfo.click();
 
 
@@ -105,9 +105,7 @@ public class project_test {
         Thread.sleep(1000);
         WebElement saveItAgain = driver.findElement(By.xpath("//button[@type='submit']"));
         saveItAgain.click();
-
-
-
+        driver.close();
 
     }
 
