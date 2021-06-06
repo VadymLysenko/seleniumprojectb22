@@ -20,9 +20,15 @@ public class ConfigurationReader {
        //#3 - load properties object with the file (conf.prop)
        properties.load(file);
 
+       //close the file
        } catch (IOException  e) {
            System.out.println("File not found in Configuration properties.");
        }
    }
+   // use the above created logic to create a re-usable static method
+
+    public static String getProperty (String keyWord) {
+       return properties.getProperty("keyWord");
+    }
 
 }
