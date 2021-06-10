@@ -1,6 +1,7 @@
 package com.cybertek.tests.day10_webtable_properties_review;
 
 import com.cybertek.utilities.ConfigurationReader;
+import com.cybertek.utilities.TableUtils;
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,7 +33,7 @@ public class Table_Task3 {
     }
 
     @Test
-    public void task3_return_tims_amount() {
+    public void task3_return_tims_due_amount() {
 
         //table[@id='table1']//td[.='Tim']/../td[4]
         //table[@id='table1']//td[.='Tim']/following-sibling::td[2]
@@ -46,9 +47,9 @@ public class Table_Task3 {
                 "Tim's cell is not returning as expected");
 
 
-
-
-
-
+    }
+    @Test
+    public void task4_verify_order_method() {
+        TableUtils.verifyOrder(driver,"Tim");
     }
 }

@@ -3,6 +3,7 @@ package com.cybertek.utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -18,8 +19,12 @@ public class TableUtils {
         //windows : alt+enter
 
         for(WebElement each : allNames) {
-            System.out.println(each.getText());
+            if(each.getText().equals(name)){
+                Assert.assertTrue(true);
+                return;
+            }
         }
+        Assert.assertTrue(false, "name does not exist in the list");
 
 
     }
