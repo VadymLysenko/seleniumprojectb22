@@ -11,32 +11,31 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class project_test {
+
+
+public class VYTRACK {
+
 
     WebDriver driver;
 
     @BeforeClass
-    public  void setupClass () {
+    public void setUp() {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://qa3.vytrack.com/user/login");
     }
+
     @Test(priority = 1)
     public void navigateVytrack() throws InterruptedException {
-        String title = driver.getTitle();
 
         WebElement username = driver.findElement(By.xpath("//input[@id='prependedInput']"));
         username.sendKeys("user178");
 
         WebElement password = driver.findElement(By.xpath("//input[@id='prependedInput2']"));
         password.sendKeys("UserUser123" + Keys.ENTER);
-        Thread.sleep(2000);
 
-        String expTitle = "Dashboard";
-        String actTitle = driver.getTitle();
-        System.out.println("actTitle = " + actTitle);
-        Thread.sleep(3000);
+        Thread.sleep(1000);
 
         WebElement fleetTest = driver.findElement(By.xpath("//span[@class='title title-level-1']"));
         fleetTest.click();
@@ -46,7 +45,7 @@ public class project_test {
         vehicle.click();
 
 
-        WebElement generalInfo = driver.findElement(By.xpath("//td[.='Cybertek']"));
+        WebElement generalInfo = driver.findElement(By.xpath("//td[@class='string-cell grid-cell grid-body-cell grid-body-cell-LicensePlate']"));
         generalInfo.click();
 
 
@@ -105,11 +104,10 @@ public class project_test {
         Thread.sleep(1000);
         WebElement saveItAgain = driver.findElement(By.xpath("//button[@type='submit']"));
         saveItAgain.click();
-        driver.close();
+
+
+
 
     }
-
-    }
-
-
+}
 
