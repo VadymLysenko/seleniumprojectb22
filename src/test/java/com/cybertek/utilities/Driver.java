@@ -53,10 +53,11 @@ public class Driver {
                     break;
 
             }
-
-
         }
-        return driver;
+        /*
 
+        same driver instance will be return all the time we will call Driver.getDriver(); method
+         */
+        return driver;
     }
 }
