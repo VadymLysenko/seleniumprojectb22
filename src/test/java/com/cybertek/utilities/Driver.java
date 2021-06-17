@@ -15,4 +15,25 @@ public class Driver {
     We make it static, because we want it run it before everything else, and we will use it in static method
      */
     private static WebDriver driver;
+
+    /*
+
+    Creating re-usable utility method that will return same 'driver' instance everytime we call it
+     */
+    public static WebDriver getDriver() {
+        if(driver==null){
+
+            /*
+            We reed our browser type from conf.prop file using
+            .getProperty method we creating in ConfReader class
+             */
+
+            String browserType = ConfigurationReader.getProperty("browser");
+
+        }
+
+
+
+
+    }
 }
