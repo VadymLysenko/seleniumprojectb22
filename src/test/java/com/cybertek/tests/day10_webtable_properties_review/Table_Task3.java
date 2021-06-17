@@ -20,20 +20,18 @@ public class Table_Task3 {
     public void setUpMethod() {
 
         String browser = ConfigurationReader.getProperty("browser");
-        // this line returns String : chrome
-
-        String url = ConfigurationReader.getProperty("dataTableUrl");
-        // this line returns String : http://practice.cybertekschool.com/tables#edit
 
         driver = WebDriverFactory.getDriver(browser);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get(url);
+
 
     }
 
     @Test
     public void task3_return_tims_due_amount() {
+        String url = ConfigurationReader.getProperty("dataTableUrl");
+        driver.get(url);
 
         //table[@id='table1']//td[.='Tim']/../td[4]
         //table[@id='table1']//td[.='Tim']/following-sibling::td[2]
