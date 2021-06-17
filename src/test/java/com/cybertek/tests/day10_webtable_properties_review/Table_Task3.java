@@ -1,32 +1,17 @@
 package com.cybertek.tests.day10_webtable_properties_review;
 
+import com.cybertek.tests.base.TestBase;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.TableUtils;
-import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
-public class Table_Task3 {
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setUpMethod() {
-
-        String browser = ConfigurationReader.getProperty("browser");
-
-        driver = WebDriverFactory.getDriver(browser);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+public class Table_Task3 extends TestBase {
 
 
-    }
+
 
     @Test
     public void task3_return_tims_due_amount() {
