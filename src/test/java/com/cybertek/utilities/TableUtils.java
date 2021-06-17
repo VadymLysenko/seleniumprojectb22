@@ -28,4 +28,15 @@ public class TableUtils {
 
 
     }
+
+    public static void printNamesAndEmails(WebDriver driver) {
+        List<WebElement> allNames = driver.findElements(By.xpath("//table[@id='table1']//tr/td[2]"));
+
+        List<WebElement> allEmails = driver.findElements(By.xpath("//table[@id='table1']//tr/td[3]"));
+        for (int i = 0; i < allNames.size(); i++) {
+            System.out.println("Name \t: " + allNames.get(i).getText());
+            System.out.println("Email \t: " + allEmails.get(i).getText());
+
+        }
+    }
 }

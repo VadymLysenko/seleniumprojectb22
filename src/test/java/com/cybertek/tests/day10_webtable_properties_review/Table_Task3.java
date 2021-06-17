@@ -11,8 +11,6 @@ import org.testng.annotations.Test;
 public class Table_Task3 extends TestBase {
 
 
-
-
     @Test
     public void task3_return_tims_due_amount() {
         String url = ConfigurationReader.getProperty("dataTableUrl");
@@ -34,5 +32,11 @@ public class Table_Task3 extends TestBase {
     @Test
     public void task4_verify_order_method() {
         TableUtils.verifyOrder(driver,"Tim");
+    }
+    @Test
+    public void task5_print_all_names_and_emails() {
+        String url = ConfigurationReader.getProperty("dataTableUrl");
+        driver.get(url);
+        TableUtils.printNamesAndEmails(driver);
     }
 }
