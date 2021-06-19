@@ -17,7 +17,7 @@ public class DriverUtilsPractice {
         //2-search for a value
         WebElement searchBox = Driver.getDriver().findElement(By.name("q"));
 
-        String searchValue = "there is no spoon";
+        String searchValue = ConfigurationReader.getProperty("searchValue");
 
         searchBox.sendKeys(searchValue + Keys.ENTER);
         //3-verify value is contained in the title
