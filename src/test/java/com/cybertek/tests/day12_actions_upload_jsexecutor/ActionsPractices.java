@@ -68,6 +68,10 @@ public class ActionsPractices {
         //scrolling up using Keys.Page._UP button
         BrowserUtils.sleep(2);
         actions.sendKeys(Keys.PAGE_UP).perform();
+        BrowserUtils.sleep(2);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+
 
 
 
