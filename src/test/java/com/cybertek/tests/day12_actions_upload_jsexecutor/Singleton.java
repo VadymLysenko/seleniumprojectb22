@@ -7,7 +7,7 @@ public class Singleton {
     //by making the String word private
     //we will ensure we create access only through our getter method
     private static String word;
-
+    // we allow user to access to 'word' in the way we want team to have
     public static String getWord(){
 
         if(word==null){
