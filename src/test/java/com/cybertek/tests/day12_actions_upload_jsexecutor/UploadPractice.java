@@ -28,6 +28,8 @@ public class UploadPractice {
 
         WebElement fileUploadedMessage = Driver.getDriver().findElement(By.tagName("h3"));
         Assert.assertTrue(fileUploadedMessage.isDisplayed());
+
+        Driver.closeDriver();
     }
 
 }
