@@ -24,7 +24,8 @@ public class JSExecutorPractices {
             BrowserUtils.sleep(1);
             js.executeScript("window.scrollBy(0, 750)");
         }
-
+        //this would go 750 pixels up
+        js.executeScript("window.scrollBy(0, -750)");
 
 
     }
