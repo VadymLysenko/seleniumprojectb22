@@ -27,5 +27,11 @@ public class DriverUtilsPractice {
 
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
 
+        Driver.closeDriver();
+
+        Driver.getDriver().get("https://etsy.com");
+
+        Driver.closeDriver();
+
     }
 }
