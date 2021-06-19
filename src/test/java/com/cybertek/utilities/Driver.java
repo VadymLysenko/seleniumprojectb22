@@ -1,5 +1,6 @@
 package com.cybertek.utilities;
 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,10 +10,12 @@ import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
+
+
     /*
-    Creating the private constructor so this class object
-    is not reachable from outside
-     */
+        Creating the private constructor so this class object
+        is not reachable from outside
+         */
     private Driver() {}
 
     /*
@@ -45,6 +48,7 @@ public class Driver {
                     driver = new ChromeDriver();
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
