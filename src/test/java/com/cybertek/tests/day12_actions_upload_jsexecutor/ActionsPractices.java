@@ -1,9 +1,11 @@
 package com.cybertek.tests.day12_actions_upload_jsexecutor;
 
+import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ActionsPractices {
@@ -23,9 +25,29 @@ public class ActionsPractices {
         WebElement user2 = Driver.getDriver().findElement(By.xpath("//h5[.='name: user2']"));
         WebElement user3 = Driver.getDriver().findElement(By.xpath("//h5[.='name: user3']"));
 
+        BrowserUtils.sleep(2);
+
 
         //we must create object of actions class to use method coming from there
         Actions actions = new Actions(Driver.getDriver());
+
+        actions.moveToElement(img1).perform();
+
+        Assert.assertTrue(user1.isDisplayed(),"User1 text is not displayed. FAIL!!!");
+
+        BrowserUtils.sleep(1);
+
+        actions.moveToElement(img2).perform();
+
+        Assert.assertTrue(user2.isDisplayed(),"User2 text is not displayed. FAIL!!!");
+
+        //command + d : for copy pasting current line
+        //command + shift + d up/down arrow : move up and down
+        BrowserUtils.sleep(1);
+
+        actions.moveToElement(img3).perform();
+
+        Assert.assertTrue(user3.isDisplayed(),"User3 text is not displayed. FAIL!!!");
 
     }
 }
