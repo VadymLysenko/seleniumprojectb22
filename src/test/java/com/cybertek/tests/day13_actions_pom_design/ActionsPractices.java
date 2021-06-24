@@ -5,6 +5,7 @@ import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ActionsPractices {
@@ -21,10 +22,14 @@ public class ActionsPractices {
         Actions actions = new Actions(Driver.getDriver());
         //use the 'actions' object double click to already located web element
         BrowserUtils.sleep(2);
-        actions.doubleClick(textToDoubleClick);
-        actions.perform();
+        actions.doubleClick(textToDoubleClick).perform();
+        //actions.perform();
 
         //4. Assert: Text’s “style” attribute value contains “red”.
+        String expectedInStyle = "red";
+        String actual = textToDoubleClick.getAttribute("style");
+
+        Assert.assertTrue(actual.contains(expectedInStyle));
 
 
     }
