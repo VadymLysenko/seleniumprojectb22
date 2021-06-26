@@ -27,6 +27,11 @@ public class ActionsPractices {
 
         actions.dragAndDrop(telerikPage.smallCircle,telerikPage.bigCircle).perform();
 
+        //2nd way of doing the same thing : Longer way
+        //actions.moveToElement(telerikPage.smallCircle).clickAndHold(telerikPage.smallCircle)
+                //.moveToElement(telerikPage.bigCircle).release().perform();
+
+
         String expected = "You did great!";
         String actual = telerikPage.bigCircle.getText();
 
