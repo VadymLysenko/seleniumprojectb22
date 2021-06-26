@@ -1,8 +1,10 @@
 package com.cybertek.tests.day14_pom_synchronization;
 
+import com.cybertek.pages.DynamicLoad7Page;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class WebDriverWaitPractice {
@@ -16,5 +18,9 @@ public class WebDriverWaitPractice {
 
         // use the object to wait for the explicit condition
         wait.until(ExpectedConditions.titleIs("Dynamic title"));
+
+        DynamicLoad7Page dynamicLoad7Page = new DynamicLoad7Page();
+
+        Assert.assertTrue(dynamicLoad7Page.doneMessage.isDisplayed());
     }
 }
