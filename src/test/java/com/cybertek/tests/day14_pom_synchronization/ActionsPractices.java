@@ -4,6 +4,7 @@ import com.cybertek.pages.TelerikPage;
 import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ActionsPractices {
@@ -23,6 +24,13 @@ public class ActionsPractices {
         //Accept cookies by clicking button
         BrowserUtils.sleep(2);
         telerikPage.acceptCookiesButton.click();
+
+        actions.dragAndDrop(telerikPage.smallCircle,telerikPage.bigCircle).perform();
+
+        String expected = "You did great!";
+        String actual = telerikPage.bigCircle.getText();
+
+        Assert.assertEquals(actual,expected);
 
     }
 }
