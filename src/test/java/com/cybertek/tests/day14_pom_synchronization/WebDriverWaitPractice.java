@@ -57,6 +57,8 @@ public class WebDriverWaitPractice {
         dynamicLoad1Page.submitButton.click();
 
         //8. Assert “Your password is invalid!” text is displayed.
+        Assert.assertTrue(dynamicLoad1Page.errorMessage.isDisplayed());
+
         //Note: Follow POM Design Pattern
     }
 }
