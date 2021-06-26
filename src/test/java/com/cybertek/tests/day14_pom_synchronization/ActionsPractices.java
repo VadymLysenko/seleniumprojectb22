@@ -1,6 +1,8 @@
 package com.cybertek.tests.day14_pom_synchronization;
 
+import com.cybertek.pages.TelerikPage;
 import com.cybertek.utilities.Driver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class ActionsPractices {
@@ -13,6 +15,9 @@ public class ActionsPractices {
          * 3.Assert: -Text in big circle changed to: “You did great!”
          */
         Driver.getDriver().get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+
+        TelerikPage telerikPage = new TelerikPage();
+        Actions actions = new Actions(Driver.getDriver());
 
     }
 }
