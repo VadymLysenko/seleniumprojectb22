@@ -27,4 +27,20 @@ public class WebDriverWaitPractice {
 
         Assert.assertTrue(dynamicLoad7Page.spongeBobImage.isDisplayed());
     }
+
+    @Test
+    public void dynamic_loading_1_test() {
+        //TC#41 : Dynamically Loaded Page Elements 1
+        //1. Go to http://practice.cybertekschool.com/dynamic_loading/1
+        Driver.getDriver().get("http://practice.cybertekschool.com/dynamic_loading/1");
+
+        // 2. Click to start
+        //3. Wait until loading bar disappears
+        //4. Assert username inputbox is displayed
+        //5. Enter username: tomsmith
+        //6. Enter password: incorrectpassword
+        //7. Click to Submit button
+        //8. Assert “Your password is invalid!” text is displayed.
+        //Note: Follow POM Design Pattern
+    }
 }
