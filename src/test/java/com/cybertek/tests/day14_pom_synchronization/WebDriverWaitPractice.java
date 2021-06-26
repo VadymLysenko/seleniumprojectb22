@@ -19,8 +19,12 @@ public class WebDriverWaitPractice {
         // use the object to wait for the explicit condition
         wait.until(ExpectedConditions.titleIs("Dynamic title"));
 
+
+
         DynamicLoad7Page dynamicLoad7Page = new DynamicLoad7Page();
 
         Assert.assertTrue(dynamicLoad7Page.doneMessage.isDisplayed());
+
+        Assert.assertTrue(dynamicLoad7Page.spongeBobImage.isDisplayed());
     }
 }
